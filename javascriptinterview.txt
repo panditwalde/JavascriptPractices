@@ -1,0 +1,240 @@
+
+
+Should Explore the topics and understand:
+What is W3C org?
+What is DOM?
+What are events in JavaScript?
+What are DOM Selectors?
+When should we use selectors like id, classes and tags ?
+What is DOMContentLoaded?
+What are HTML5 Features?
+What are different components in url ? e.g. schema protocol, domain, url path, path param, query param
+What are different http methods?
+What is http headers?
+What is xhr/ajax ? What are different status in ajax?
+What is window fetch?   
+What is the difference between get / post / put ?
+What are different Status Code in HTTP?
+What is the difference between padding and margin in css?
+What is html form ? What are different events in form ? What is Event.preventDefault()?
+What is localStorage?
+How html is rendered in browser?
+What is the importance of css stylesheet hierarchy?
+What is DOM Manipulation?
+
+
+1.Question flatarray
+let ques =[1,2,3,[3,4,5,6],34,5,[7,8]]
+
+let result=[]
+
+
+ flatArray =(arr)=>{
+   for (var i = 0; i < arr.length; i++) {
+     if (typeof arr[i]==="number") {
+       result.push(arr[i])
+       
+     }
+     if (typeof arr[i]==="object") {
+       flatArray(arr[i])
+       
+     }
+   }
+    return arr  
+ }
+ flatArray(ques)
+  
+  console.log(result)
+  
+ ------------------------------------------------------------------------------------------------------------- 
+  2. Question capitalize first letter 
+  
+  
+capitalize =(text)=>{
+    let result=[]
+let textarr=text.split(' ');
+
+for (let word of textarr) {
+  result.push(word[0].toUpperCase()+ word.slice(1) )
+  }
+  
+  return result.join(' ')
+}
+console.log(capitalize("pandit walde"))
+
+ ------------------------------------------------------------------------------------------------------------- 
+
+3.Question  find duplicate number in  Array
+
+
+ 
+let input=[1,2,3,4,5,6,1,2,3,4,5,6,7,4,3,2,3,4,5,3,3,4]
+
+findDuplicateNumber =(arr)=>{
+  
+  let result=[]
+  let temparr=[...arr].sort();
+  for (let i = 0; i < temparr.length; i++) {
+    
+    if (temparr[i+1]===temparr[i]) {
+      result.push(temparr[i])
+    }
+  }
+   
+  return result;
+  
+}
+console.log(findDuplicateNumber(input))
+
+//   let result = (names) => names.filter((v,i) => names.indexOf(v) !== i)
+
+//   remove duplicate element
+
+//   let result = (names) => names.filter((v,i) => names.indexOf(v) === i)
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------- 
+
+4.Question  Reverse string 
+
+let str ="pandit rakhmaji walde"
+let result=[]
+let strarr=str.split(" ");
+for (let i = 0; i < strarr.length; i++) {
+
+      result.push(strarr[i].split("").reverse().join(""))
+ }
+console.log(result.join(" "))
+
+o/p: tidnap ijamhkar edlaw
+
+-------------------------------------------------------------------------------------------------------------
+
+5.Question  check number & string is  palindrome or not
+
+
+
+ ispalindrome =(str)=>{
+   
+   let result=str.split("").every((char,i)=>char===str[str.length-i-1])
+   
+   return result
+   
+ }
+ 
+ console.log(ispalindrome("1221"))
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+6.Question  check number is  prime  or not in range
+
+ isPrime =(n)=>{
+   let prime =true;
+   for(let i=2;i<n;i++){
+     if (n%i===0) {
+       prime=false;
+       break;
+     
+     }
+   }
+   
+   return prime;
+ }
+ 
+ for (let i = 10; i <= 20; i++) {
+   if (isPrime(i)) {
+     console.log(i);
+     
+   }
+ }
+
+-------------------------------------------------------------------------------------------------------------
+
+7.Question  check missing Number in array
+
+ missingNumber =(nums)=>{
+   
+     let maxsum=  nums.length * (nums.length + 1) / 2;;
+   
+   //    maxSum = { 5 * (5 + 1) / 2 } = 15
+
+       return maxsum - nums.reduce((a,b)=>a+b);
+    
+ }
+ 
+ console.log(missingNumber([0, 1, 2, 3, 5]))
+ 
+ 
+ -------------------------------------------------------------------------------------------------------------
+8.  check two string anagram or not
+
+
+
+ isAnagram=(str1,str2)=>{
+   
+   if (str1.length !== str2.length) {
+        return false;
+    }
+    const result = {};
+    for (let i=0;i<str1.length;i++) {
+        let char = str1[i];
+        result[char] = result[char] ? result[char] += 1 : result[char] = 1;
+    }
+
+    for (let i=0;i<str2.length;i++) {
+        let char = str2[i];
+        if (!result[char]) {
+            return false;
+        }
+        else {
+            result[char] = -1;
+        }
+    }
+    return true;
+}
+
+ 
+ console.log(isAnagram('abc','bac'))
+ 
+ -------------------------------------------------------------------------------------------------------------
+
+8.Question  first Reapeated Number in string
+
+ firstReapeatedNumber=(str)=>{
+    
+    
+    for (let i = 0; i < str.length; i++) {
+    
+    //non repeating first char
+    //str.indexOf(str.charAt(i)) !== str.lastIndexOf(str.charAt(i)) 
+    
+    
+      if (str.indexOf(str.charAt(i)) !== str.lastIndexOf(str.charAt(i))) {
+         return str.charAt(i)
+      }
+     
+      
+    }
+    
+    return  "no element found";
+    
+  }
+   
+  
+  console.log(firstReapeatedNumber("abcdea"));
+  
+ -------------------------------------------------------------------------------------------------------------
+ Q. sum of number
+ let sum =a=>b=>b? sum(a+b):a; 
+
+console.log(sum(2)(3)(1)(4)());
+
+result =10
+ -------------------------------------------------------------------------------------------------------------
+
+
