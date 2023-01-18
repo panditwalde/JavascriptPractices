@@ -95,8 +95,52 @@ function quickSort(arr) {
 }
 
 
-console.log("bubble sort =>>>>>", bubbleSort([7, 5, 3, 2, 3, 4, 2, 1, 3]))
-console.log("Insertion sort =>>>>>", insertionSort([7, 5, 3, 2, 3, 4, 2, 1, 3]))
-console.log("selection sort =>>>>>", sectionSort([7, 5, 3, 2, 3, 4, 2, 1, 3]))
-console.log("merge sort =>>>>>", mergeSort([7, 5, 3, 2, 3, 4, 2, 1, 3]))
-console.log("quick sort =>>>>>", mergeSort([7, 5, 3, 2, 3, 4, 2, 1, 3]))
+// console.log("bubble sort =>>>>>", bubbleSort([7, 5, 3, 2, 3, 4, 2, 1, 3]))
+// console.log("Insertion sort =>>>>>", insertionSort([7, 5, 3, 2, 3, 4, 2, 1, 3]))
+// console.log("selection sort =>>>>>", sectionSort([7, 5, 3, 2, 3, 4, 2, 1, 3]))
+// console.log("merge sort =>>>>>", mergeSort([7, 5, 3, 2, 3, 4, 2, 1, 3]))
+// console.log("quick sort =>>>>>", mergeSort([7, 5, 3, 2, 3, 4, 2, 1, 3]))
+
+
+
+
+
+
+
+
+
+
+
+
+function binarySearch(arr,target) {
+
+    let left=0;
+    let right=arr.length-1;
+
+    while (left<=right) {
+
+        let mid =Math.floor((left+right)/2)
+
+        if (arr[mid]===target) {
+            return mid            
+
+        }
+
+        else if(arr[mid]<target){
+            right=mid+1
+
+        }
+        else{
+
+            left=mid-1
+
+        }
+        
+    }
+
+    return -1
+    
+}
+
+
+console.log("binary search =>>",binarySearch([7, 5, 3, 2, 3, 4, 2, 1, 3],4))
