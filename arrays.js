@@ -97,3 +97,94 @@ console.log("second Largest =>", secondLargest(input));
 
 
 // ------------------------------------------------------------------------------------------------------------- 
+
+
+
+
+// fibonacci series
+
+let fibo = [0, 1];
+
+for (let i = 0; i < 10; i++) {
+    fibo.push(fibo[i] + fibo[i + 1]);
+}
+
+console.log("fibonacci series =>>>>", fibo.join(" "));
+
+
+// ------------------------------------------------------------------------------------------------------------- 
+
+
+// factorial number
+
+const factorial = (n) => {
+    if (n === 0) return 1;
+    return n * factorial(n - 1);
+};
+console.log("factorial number =>>>", factorial(5));
+
+// ------------------------------------------------------------------------------------------------------------- 
+
+
+// prime number
+
+let checkPrime = (n) => {
+    let prime = true;
+    for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+            prime = false;
+            break;
+        }
+    }
+    return prime;
+};
+
+for (let i = 1; i < 30; i++) {
+    checkPrime(i) && console.log(i);
+}
+
+
+// ------------------------------------------------------------------------------------------------------------- 
+
+
+//  missing number
+
+const missingNum = (...nums) => {
+    let minNum = Math.min(...nums);
+    let maxNum = Math.max(...nums);
+    let missing = [];
+    for (let i = minNum; i <= maxNum; i++) {
+        !nums.includes(i) && missing.push(i);
+    }
+    return missing;
+};
+
+console.log("missingNum =>>", missingNum(1, 2, 3, 4, 5, 6, 8, 9, 10, 13));
+
+
+// ------------------------------------------------------------------------------------------------------------- 
+
+
+// anagram number
+
+let checkAnagram = (str1, str2) => {
+    if (str1.length !== str2.length) return false;
+
+    let map1 = {};
+    let map2 = {};
+
+    for (const item in str1) {
+        map1[str1[item]] = map1[str1[item]] ? map1[str1[item]] + 1 : 1;
+        map2[str2[item]] = map2[str2[item]] ? map2[str2[item]] + 1 : 1;
+    }
+    for (const item in map1) {
+        if (map1[item] !== map2[item]) return false;
+    }
+
+    return true;
+};
+console.log("anagram =>>>", checkAnagram("cat", "act"));
+
+
+// ------------------------------------------------------------------------------------------------------------- 
+

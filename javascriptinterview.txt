@@ -216,3 +216,24 @@ result =10
  -------------------------------------------------------------------------------------------------------------
 
 
+
+
+
+function FirstUniqueChar(str) {
+
+  let map={}
+
+  str.split("").map((row)=>map[row]=map[row]?map[row]+1:1)
+console.log(map)
+
+     for (const i in map) {
+       if (map[i]===1) {
+         return i
+         
+       }
+     
+     }
+return -1  
+}
+
+console.log("FirstUniqueChar=>",FirstUniqueChar("pandipt"))
