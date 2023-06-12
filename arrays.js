@@ -17,7 +17,6 @@ function rotateArray(input, rotate) {
 }
 console.log("Rotate Array =>", rotateArray(input, 2));
 
-rotateArray(input, 2);
 
 
 
@@ -188,3 +187,24 @@ console.log("anagram =>>>", checkAnagram("cat", "act"));
 
 // ------------------------------------------------------------------------------------------------------------- 
 
+
+
+const twoSum = (arr, target) => {
+    let map = new Map();
+    for (let i = 0; i < arr.length; i++) {
+        const compliment = target - arr[i];
+        if (map.has(compliment)) {
+            return [i, map.get(compliment)]
+        } else {
+            map.set(arr[i], i);
+        }
+    }
+};
+
+
+let arr = [1, 2, 5, 3, 4, 6, 3];
+let target = 11;
+console.log(twoSum(arr, target));
+
+
+// ------------------------------------------------------------------------------------------------------------- 
